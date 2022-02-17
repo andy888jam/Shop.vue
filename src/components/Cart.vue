@@ -228,6 +228,10 @@ input:invalid {
 .item-price {
   font-weight: bold;
 }
+.main__cart-title-text {
+  margin: 14px 0 32px;
+  font-size: 18px;
+}
 .main__cart__items__item {
   margin-bottom: 18px;
 }
