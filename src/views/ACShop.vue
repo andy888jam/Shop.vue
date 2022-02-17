@@ -2,11 +2,11 @@
   <section class="container main">
     <div class="left-content">
       <!-- form part -->
-      <Form />
+      <Form @free="pass" @transit="pass" />
     </div>
     <div class="cart">
       <!-- cart part -->
-      <Cart />
+      <Cart :passPrice="transitPrice" />
       <!-- button part -->
     </div>
   </section>
@@ -17,9 +17,20 @@ import Form from "./../components/Form";
 import Cart from "./../components/Cart";
 
 export default {
+  data() {
+    return {
+      transitPrice: "免費",
+    };
+  },
   components: {
     Form,
     Cart,
+  },
+  methods: {
+    //傳遞運費的函式
+    pass(price) {
+      this.transitPrice = price;
+    },
   },
 };
 </script>
@@ -41,5 +52,6 @@ export default {
 
 .cart {
   grid-column: 7 / 13;
+  margin-top: 75px;
 }
 </style>
